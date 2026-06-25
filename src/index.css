@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #09090b;
+  --color-bg-surface: #18181b;
+  --color-bg-glass: rgba(24, 24, 27, 0.6);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-accent: #e4e4e7;
+  --color-accent-hot: #f4f4f5;
+  --color-text-body: #a1a1aa;
+  --color-text-muted: #52525b;
+  --color-danger-red: #ef4444;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-body font-body antialiased selection:bg-accent-hot selection:text-bg-primary;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-accent-hot;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-bg-glass backdrop-blur-md border border-border-subtle rounded-xl;
+  }
+}
